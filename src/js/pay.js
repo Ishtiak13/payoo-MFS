@@ -17,8 +17,12 @@ function handlePayClick() {
     } else if (number.length <= 12 && number.length >= 6) {
       if (moneyAmount === "") {
         alert("Add the amount!");
+      } else if (moneyAmount < 0) {
+        alert("Add valid amount!");
       } else if (pin == "1234") {
-        if (money > 25000) {
+        if (balance === 0 || balance < money) {
+          alert("You have not enough balance to pay!");
+        } else if (money > 25000) {
           alert("You Cannot Add More than 25000!");
         } else {
           document.getElementById("main-balance").innerText =

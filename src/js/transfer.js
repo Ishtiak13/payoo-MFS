@@ -14,8 +14,12 @@ function handleTransferClick() {
   } else if (number.length == 11 && number[0] === "0" && number[1] === "1") {
     if (moneyAmount === "") {
       alert("Add the amount!");
+    } else if (moneyAmount < 0) {
+      alert("Add valid amount!");
     } else if (pin == "1234") {
-      if (money > 25000) {
+      if (balance === 0 || balance < money) {
+        alert("You have not enough balance to transfer!");
+      } else if (money > 25000) {
         alert("You Cannot Withdraw More than 25000!");
       } else {
         document.getElementById("main-balance").innerText =
