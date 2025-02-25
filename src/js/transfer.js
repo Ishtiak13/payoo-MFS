@@ -28,7 +28,7 @@ function handleTransferClick() {
   </svg>
   <span>Your money transfer Successfully!</span>
 </div>
-<button id="add-again-btn" class="btn btn-wide mx-auto">Add again</button>
+<button id="add-again-btn" class="btn btn-wide mx-auto">Transfer again</button>
             </section>`;
         document
           .getElementById("add-again-btn")
