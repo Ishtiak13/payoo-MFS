@@ -1,21 +1,14 @@
-document.getElementById("cash-out").style.borderColor = "#0874F2";
-document.getElementById("cash-out").style.background =
-  "rgba(8, 116, 242, 0.05)";
-document.querySelectorAll("#cash-out p").forEach((p) => {
-  p.style.color = "black";
-});
-
 function handleCashOutClick() {
-  const moneyAmount = document.getElementById("money-amount").value;
+  const moneyAmount = document.getElementById("cashout-money-amount").value;
   const money = parseInt(moneyAmount);
   const mainBalance = document
     .getElementById("main-balance")
     .innerText.slice(1);
   const balance = parseInt(mainBalance);
 
-  const number = document.getElementById("phone-number").value;
-  const pin = document.getElementById("pin").value;
-  const originalFormHTML = document.getElementById("add-money-form").innerHTML;
+  const number = document.getElementById("cashout-phone-number").value;
+  const pin = document.getElementById("cashout-pin").value;
+  const originalFormHTML = document.getElementById("cashout-form").innerHTML;
   if (number === "") {
     alert("Add the Number!");
   } else if (number.length == 11 && number[0] === "0" && number[1] === "1") {
@@ -27,7 +20,7 @@ function handleCashOutClick() {
       } else {
         document.getElementById("main-balance").innerText =
           "$" + (balance - money);
-        document.getElementById("add-money-form").innerHTML = `
+        document.getElementById("cashout-form").innerHTML = `
             <section class="flex items-center justify-center flex-col gap-7">
             <div role="alert" class="alert alert-success">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
@@ -42,10 +35,10 @@ function handleCashOutClick() {
         document
           .getElementById("add-again-btn")
           .addEventListener("click", function () {
-            document.getElementById("add-money-form").innerHTML =
+            document.getElementById("cashout-form").innerHTML =
               originalFormHTML;
             document
-              .getElementById("btn-withdraw-money")
+              .getElementById("btn-cashout-money")
               .addEventListener("click", handleCashOutClick);
           });
       }
@@ -57,28 +50,5 @@ function handleCashOutClick() {
   }
 }
 document
-  .getElementById("btn-withdraw-money")
+  .getElementById("btn-cashout-money")
   .addEventListener("click", handleCashOutClick);
-
-document.getElementById("btn-logout").addEventListener("click", function () {
-  window.location.href = "./index.html";
-});
-document.getElementById("add-money").addEventListener("click", function () {
-  window.location.href = "./add.html";
-});
-document
-  .getElementById("transfer-money")
-  .addEventListener("click", function () {
-    window.location.href = "./transfer.html";
-  });
-document.getElementById("pay-bill").addEventListener("click", function () {
-  window.location.href = "./pay.html";
-});
-document
-  .getElementById("transaction-money")
-  .addEventListener("click", function () {
-    window.location.href = "./transaction.html";
-  });
-document.getElementById("bonus-coupon").addEventListener("click", function () {
-  window.location.href = "./bonus.html";
-});

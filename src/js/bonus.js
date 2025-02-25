@@ -1,10 +1,3 @@
-document.getElementById("bonus-coupon").style.borderColor = "#0874F2";
-document.getElementById("bonus-coupon").style.background =
-  "rgba(8, 116, 242, 0.05)";
-document.querySelectorAll("#bonus-coupon p").forEach((p) => {
-  p.style.color = "black";
-});
-
 function handleBonusClick() {
   const couponNumber = document.getElementById("coupon-number").value.trim();
   const bonusForm = document.getElementById("bonus-form");
@@ -64,26 +57,3 @@ function handleBonusClick() {
 document
   .getElementById("btn-bonus")
   .addEventListener("click", handleBonusClick);
-
-document.getElementById("btn-logout").addEventListener("click", function () {
-  window.location.href = "./index.html";
-});
-document.getElementById("add-money").addEventListener("click", function () {
-  window.location.href = "./add.html";
-});
-document
-  .getElementById("transfer-money")
-  .addEventListener("click", function () {
-    window.location.href = "./transfer.html";
-  });
-document.getElementById("pay-bill").addEventListener("click", function () {
-  window.location.href = "./pay.html";
-});
-document
-  .getElementById("transaction-money")
-  .addEventListener("click", function () {
-    window.location.href = "./transaction.html";
-  });
-document.getElementById("cash-out").addEventListener("click", function () {
-  window.location.href = "./cashout.html";
-});

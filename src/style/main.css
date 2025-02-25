@@ -1,0 +1,9 @@
+.active-btn {
+  border-color: #0874f2 !important;
+  background: rgba(8, 116, 242, 0.05) !important;
+}
+
+.active-btn p {
+  color: #0874f2 !important;
+  font-weight: 700;
+}

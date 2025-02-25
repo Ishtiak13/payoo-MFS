@@ -1,21 +1,14 @@
-document.getElementById("pay-bill").style.borderColor = "#0874F2";
-document.getElementById("pay-bill").style.background =
-  "rgba(8, 116, 242, 0.05)";
-document.querySelectorAll("#pay-bill p").forEach((p) => {
-  p.style.color = "black";
-});
-
 function handlePayClick() {
-  const moneyAmount = document.getElementById("money-amount").value;
+  const moneyAmount = document.getElementById("pay-amount").value;
   const money = parseInt(moneyAmount);
   const mainBalance = document
     .getElementById("main-balance")
     .innerText.slice(1);
   const balance = parseInt(mainBalance);
-  const bankName = document.getElementById("bank-selected");
-  const number = document.getElementById("phone-number").value;
-  const pin = document.getElementById("pin").value;
-  const originalFormHTML = document.getElementById("add-money-form").innerHTML;
+  const bankName = document.getElementById("merchant-select");
+  const number = document.getElementById("pay-bill-number").value;
+  const pin = document.getElementById("pay-pin").value;
+  const originalFormHTML = document.getElementById("pay-bill-form").innerHTML;
   if (bankName.selectedIndex === 0) {
     alert("Select a Merchant");
   } else {
@@ -30,7 +23,7 @@ function handlePayClick() {
         } else {
           document.getElementById("main-balance").innerText =
             "$" + (balance - money);
-          document.getElementById("add-money-form").innerHTML = `
+          document.getElementById("pay-bill-form").innerHTML = `
             <section class="flex items-center justify-center flex-col gap-7">
             <div role="alert" class="alert alert-success">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
@@ -43,7 +36,7 @@ function handlePayClick() {
           document
             .getElementById("add-again-btn")
             .addEventListener("click", function () {
-              document.getElementById("add-money-form").innerHTML =
+              document.getElementById("pay-bill-form").innerHTML =
                 originalFormHTML;
               document
                 .getElementById("btn-pay-bill")
@@ -61,26 +54,3 @@ function handlePayClick() {
 document
   .getElementById("btn-pay-bill")
   .addEventListener("click", handlePayClick);
-
-document.getElementById("btn-logout").addEventListener("click", function () {
-  window.location.href = "./index.html";
-});
-document.getElementById("cash-out").addEventListener("click", function () {
-  window.location.href = "./cashout.html";
-});
-document
-  .getElementById("transfer-money")
-  .addEventListener("click", function () {
-    window.location.href = "./transfer.html";
-  });
-document.getElementById("add-money").addEventListener("click", function () {
-  window.location.href = "./add.html";
-});
-document
-  .getElementById("transaction-money")
-  .addEventListener("click", function () {
-    window.location.href = "./transaction.html";
-  });
-document.getElementById("bonus-coupon").addEventListener("click", function () {
-  window.location.href = "./bonus.html";
-});
