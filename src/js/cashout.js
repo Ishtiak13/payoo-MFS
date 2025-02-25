@@ -41,6 +41,34 @@ function handleCashOutClick() {
               .getElementById("btn-cashout-money")
               .addEventListener("click", handleCashOutClick);
           });
+        const div = document.createElement("div");
+        div.classList.add(
+          "flex",
+          "justify-between",
+          "items-center",
+          "p-4",
+          "bg-white",
+          "border",
+          "border-stone-300",
+          "rounded-2xl"
+        );
+        div.innerHTML = `
+            <div class="flex gap-3 items-center w-full">
+              <img
+                class="rounded-full bg-stone-300 p-2"
+                src="./src/assets/wallet 1.png"
+                alt=""
+              />
+              <div>
+                <h3 class="font-semibold text-gray-700"> Cash Out</h3>
+                <p class="text-xs text-stone-400">Today 01:44 AM</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+
+              `;
+        const history = document.getElementById("transaction-history");
+        history.prepend(div);
       }
     } else {
       alert("Set Correct Pin!");

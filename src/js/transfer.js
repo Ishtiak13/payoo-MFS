@@ -20,16 +20,18 @@ function handleTransferClick() {
       } else {
         document.getElementById("main-balance").innerText =
           "$" + (balance - money);
+
         document.getElementById("transfer-form").innerHTML = `
             <section class="flex items-center justify-center flex-col gap-7">
             <div role="alert" class="alert alert-success">
   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
   </svg>
-  <span>Your money has been transfer Successfully!</span>
+  <span>Your money has been transferred Successfully!</span>
 </div>
 <button id="add-again-btn" class="btn btn-wide mx-auto">Transfer again</button>
             </section>`;
+
         document
           .getElementById("add-again-btn")
           .addEventListener("click", function () {
@@ -39,6 +41,34 @@ function handleTransferClick() {
               .getElementById("btn-transfer-money")
               .addEventListener("click", handleTransferClick);
           });
+        const div = document.createElement("div");
+        div.classList.add(
+          "flex",
+          "justify-between",
+          "items-center",
+          "p-4",
+          "bg-white",
+          "border",
+          "border-stone-300",
+          "rounded-2xl"
+        );
+        div.innerHTML = `
+            <div class="flex gap-3 items-center w-full">
+              <img
+                class="rounded-full bg-stone-300 p-2"
+                src="./src/assets/wallet 1.png"
+                alt=""
+              />
+              <div>
+                <h3 class="font-semibold text-gray-700"> Bill Transferred</h3>
+                <p class="text-xs text-stone-400">Today 01:44 AM</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical cursor-pointer"></i>
+
+              `;
+        const history = document.getElementById("transaction-history");
+        history.prepend(div);
       }
     } else {
       alert("Set Correct Pin!");
