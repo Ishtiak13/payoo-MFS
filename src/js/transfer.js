@@ -7,7 +7,7 @@ function handleTransferClick() {
   const balance = parseInt(mainBalance);
 
   const number = document.getElementById("transfer-phone-number").value;
-  const pin = document.getElementById("pin").value;
+  const pin = document.getElementById("transfer-pin").value;
   const originalFormHTML = document.getElementById("transfer-form").innerHTML;
   if (number === "") {
     alert("Add the Number!");
